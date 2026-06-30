@@ -4,18 +4,18 @@
 
 This project was developed as part of the **Data Science in Cybersecurity** course at the **University of Haifa**.
 
-The objective of the project is to reproduce and critically evaluate a published phishing website detection study. The project follows a complete machine learning workflow, including data exploration, preprocessing, feature engineering, model training, evaluation, and error analysis.
+The objective of this project is to reproduce and critically evaluate a published phishing website detection study using machine learning techniques. The project follows a complete machine learning pipeline, including data exploration, preprocessing, feature engineering, model training, evaluation, and error analysis.
 
-Two machine learning models were implemented and compared:
+Two supervised machine learning models were implemented and compared:
 
 - Logistic Regression
 - Random Forest
 
-The experiments were performed in Python using Google Colab.
+The implementation was developed using **Python** in **Google Colab**.
 
 ---
 
-# Selected Research Paper
+## Selected Research Paper
 
 **Phishing Websites Dataset for Machine Learning**
 
@@ -25,47 +25,80 @@ https://www.sciencedirect.com/science/article/pii/S2352340920313202
 
 ---
 
-# Original GitHub Repository
+## Original GitHub Repository
 
-The implementation provided by the original authors can be found here:
+The original implementation that inspired this project is available at:
 
 https://github.com/GregaVrbancic/Phishing-Dataset
 
 ---
 
-# Dataset Source
+## Dataset Source
 
-The dataset used in this project is the phishing website dataset introduced in the above publication.
+The dataset used in this project is the phishing website dataset introduced in the research paper above.
 
-Dataset information:
+Dataset characteristics:
 
-- 58,645 website samples
-- 112 extracted features
-- Binary classification
-    - 0 = Legitimate Website
-    - 1 = Phishing Website
+- **58,645 website samples**
+- **112 extracted features**
+- Binary classification task:
+  - **0** = Legitimate Website
+  - **1** = Phishing Website
 
-The dataset is available through the original GitHub repository and the accompanying publication.
+This repository includes the dataset used in the notebook:
+
+```
+data/dataset_small.csv
+```
 
 ---
 
-# Repository Structure
+## Repository Structure
 
 ```
 phishing-website-detection/
 │
+├── data/
+│   └── dataset_small.csv
+│
 ├── phishing_detection.ipynb
 ├── report.pdf
-└── README.md
+├── README.md
+└── requirements.txt
 ```
 
 ---
 
-# Requirements
+## Project Workflow
 
-Python 3.10 or newer
+The notebook includes the following stages:
 
-Required libraries:
+- Data loading and inspection
+- Missing value analysis
+- Duplicate analysis
+- Exploratory Data Analysis (EDA)
+- Feature Engineering
+- Logistic Regression
+- Random Forest
+- Model Evaluation
+- Error Analysis
+- Feature Importance Analysis
+
+---
+
+## Results Summary
+
+Both machine learning models achieved strong performance in detecting phishing websites.
+
+The **Random Forest** model obtained the best overall results, outperforming Logistic Regression across the evaluation metrics used in this project.
+
+---
+
+## Requirements
+
+Python **3.10** or newer.
+
+Required Python libraries:
 
 - pandas
 - numpy
@@ -73,7 +106,13 @@ Required libraries:
 - seaborn
 - scikit-learn
 
-Install the required packages:
+Install all required packages using:
+
+```bash
+pip install -r requirements.txt
+```
+
+or
 
 ```bash
 pip install pandas numpy matplotlib seaborn scikit-learn
@@ -81,7 +120,7 @@ pip install pandas numpy matplotlib seaborn scikit-learn
 
 ---
 
-# Execution Instructions
+## Execution Instructions
 
 1. Clone this repository.
 
@@ -89,40 +128,39 @@ pip install pandas numpy matplotlib seaborn scikit-learn
 git clone https://github.com/Mrahelm/phishing-website-detection.git
 ```
 
-2. Open `phishing_detection.ipynb` using Google Colab or Jupyter Notebook.
+2. Open **phishing_detection.ipynb** using **Google Colab** or **Jupyter Notebook**.
 
-3. Download the phishing website dataset from the original repository.
+3. Verify that the dataset is located at:
 
-4. Update the dataset path inside the notebook if necessary.
+```
+data/dataset_small.csv
+```
+
+4. If necessary, update the dataset path inside the notebook.
 
 5. Run all notebook cells from top to bottom.
 
 ---
 
-# Project Workflow
+## References
 
-The notebook includes:
+### Research Paper
 
-- Data loading
-- Data inspection
-- Missing value analysis
-- Exploratory Data Analysis (EDA)
-- Feature Engineering
-- Logistic Regression model
-- Random Forest model
-- Model evaluation
-- Error analysis
-- Feature importance analysis
+M. S. A. Aljabri, S. Aljameel, I. Alsmadi, et al.
 
----
+**Phishing Websites Dataset for Machine Learning**
 
-# Results Summary
+Data in Brief, Volume 33, 2020.
 
-The Random Forest model achieved the best overall performance, outperforming Logistic Regression across all evaluation metrics.
+https://www.sciencedirect.com/science/article/pii/S2352340920313202
+
+### Original GitHub Repository
+
+https://github.com/GregaVrbancic/Phishing-Dataset
 
 ---
 
-# Author
+## Author
 
 **Tasneem Mrahel**
 
