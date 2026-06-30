@@ -64,7 +64,6 @@ phishing-website-detection/
 ├── phishing_detection.ipynb
 ├── report.pdf
 ├── README.md
-└── requirements.txt
 ```
 
 ---
