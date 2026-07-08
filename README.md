@@ -12,6 +12,19 @@ Two supervised machine learning models were implemented and compared:
 - Random Forest
 
 The implementation was developed using **Python** in **Google Colab**.
+## Critical Evaluation
+
+This project reproduces and critically evaluates the methodology presented in the original paper.
+
+Several improvements were introduced compared to the original implementation:
+
+- Duplicate records were identified and analyzed.
+- Feature selection was performed only on the training set to eliminate data leakage.
+- Additional cybersecurity evaluation metrics (MCC, PR-AUC, F2-score) were computed.
+- Threshold tuning was performed to study the Precision–Recall trade-off.
+- Error analysis examined False Positives and False Negatives from a cybersecurity perspective.
+The dataset was also inspected for duplicate records, and experiments confirmed that removing duplicate samples did not materially affect model performance.
+Feature selection was performed exclusively on the training set to prevent information leakage into the test data.
 
 ---
 
@@ -61,9 +74,10 @@ phishing-website-detection/
 ├── data/
 │   └── dataset_small.csv
 │
-├── phishing_detection.ipynb
+├── cyber_phishing_detection.ipynb
 ├── report.pdf
 ├── README.md
+├── requirements.txt
 ```
 
 ---
@@ -77,44 +91,36 @@ The notebook includes the following stages:
 - Duplicate analysis
 - Exploratory Data Analysis (EDA)
 - Feature Engineering
+- Leakage-Free Feature Selection
+- Feature Scaling
 - Logistic Regression
 - Random Forest
 - Model Evaluation
-- Error Analysis
+- Threshold Tuning
 - Feature Importance Analysis
-
+- ROC Curve Analysis
+- Error Analysis
 ---
 
 ## Results Summary
 
 Both machine learning models achieved strong performance in detecting phishing websites.
 
-The **Random Forest** model obtained the best overall results, outperforming Logistic Regression across the evaluation metrics used in this project.
+Random Forest consistently outperformed Logistic Regression across Accuracy, Precision, Recall, F1-score, F2-score, ROC-AUC, PR-AUC, and MCC.
 
+Threshold tuning further demonstrated the trade-off between Precision and Recall, highlighting the importance of selecting an operating threshold for cybersecurity applications.
 ---
 
 ## Requirements
 
 Python **3.10** or newer.
 
-Required Python libraries:
-
-- pandas
-- numpy
-- matplotlib
-- seaborn
-- scikit-learn
+All required packages are listed in requirements.txt.
 
 Install all required packages using:
 
 ```bash
 pip install -r requirements.txt
-```
-
-or
-
-```bash
-pip install pandas numpy matplotlib seaborn scikit-learn
 ```
 
 ---
@@ -127,7 +133,7 @@ pip install pandas numpy matplotlib seaborn scikit-learn
 git clone https://github.com/Mrahelm/phishing-website-detection.git
 ```
 
-2. Open **phishing_detection.ipynb** using **Google Colab** or **Jupyter Notebook**.
+2. Open **cyber_phishing_detection.ipynb** using **Google Colab** or **Jupyter Notebook**.
 
 3. Verify that the dataset is located at:
 
@@ -140,7 +146,6 @@ data/dataset_small.csv
 5. Run all notebook cells from top to bottom.
 
 ---
-
 ## References
 
 ### Research Paper
